@@ -62,7 +62,7 @@ function displayBook(book) {
             
         }  
     })
-    bookCard.addEventListener('click', (e) => {
+    buttons[1].addEventListener('click', (e) => {
         let booksContainer = document.querySelector('.book-list');
         let books = booksContainer.childNodes;
         for (let i = 1; i < books.length; i++){
@@ -73,8 +73,18 @@ function displayBook(book) {
         };
 
         myLibrary = myLibrary.filter(book => book.id !== e.target.id)
-        console.log(myLibrary);
     });
+    buttons[3].addEventListener('click', (e) => {
+        if (e.target.innerHTML === 'Read') {
+            e.target.innerHTML = 'Not read';
+            e.target.classList.remove('read-button');
+            e.target.classList.add('not-read-button');
+        } else {
+            e.target.innerHTML = 'Read';
+            e.target.classList.remove('not-read-button');
+            e.target.classList.add('read-button');
+        }
+    })
     bookCard.style.display = 'block';
     booksContainer.append(bookCard);
 }
