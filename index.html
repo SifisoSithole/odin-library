@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Library</title>
+</head>
+<body>
+    <header>
+        <h1>Library</h1>
+    </header>
+    <main>
+        <div id="sidebar">
+            <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">×</a>
+            <form id="bookForm">
+        
+                <input type="text" id="author" name="author" placeholder="Author" required>
+        
+                <input type="text" id="title" name="title" placeholder="Title" required>
+        
+                <input type="number" id="pages" name="pages" placeholder="pages" required>
+
+                <div class="read-container">
+                    <label for="read">Have you read it?</label>
+                    <input type="checkbox" id="read" name="read">
+                </div>
+        
+                <button type="button" onclick="addBook()">Add Book</button>
+                <button type="button" class="cancel-btn" onclick="clearForm()">Clear</button>
+            </form>
+        </div>
+
+        <div id="main-content">
+            <h2 id="open-btn" onclick="openNav()">+ Add book</h2>
+            
+
+            <div class="book-list">
+                <div class="book-container" style="display: none;">
+                    <h2>Title: <span id="title-name"></span></h2>
+                    <p>Author: <span id="author-name"></span></p>
+                    <p>Number of Pages: <span id="page-number"></span></p>
+                    <div class="buttons">
+                        <button class="remove-button">Remove Book</button>
+                        <button class="not-read-button">Not Read</button>
+                    </div>
+                </div>
+        </div>
+
+    </main>
+</body>
+</html>

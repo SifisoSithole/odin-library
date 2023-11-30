@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+header > h1 {
+    padding: 10px;
+}
+
+main {
+    min-height: 100vh;
+    background-color: #f0eef1;
+}
+
+#main-content > h2 {
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+}
+
+#sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+#sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+#sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.read-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+    color: #fff
+}
+
+#sidebar .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 30px;
+    margin-left: 50px;
+}
+
+#main-content {
+    transition: margin-left 0.5s;
+    padding: 16px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+form input {
+    margin: 10px 10px;
+    padding: 8px;
+}
+
+form button {
+    margin: 10px 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+form button.cancel-btn {
+    background-color: #f44336;
+}
+
+form button.cancel-btn:hover {
+    background-color: #d32f2f;
+}
+
+.book-container {
+    background-color: #FFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 350px;
+    height: 150px;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.buttons > button {
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.remove-button {
+    background-color: #ff5252;
+}
+
+.not-read-button {
+    background-color: #4285f4;
+}
+
+.read-button{
+    background-color: #4CAF50;
+}
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.book-list {
+    padding: 20px;
+}
