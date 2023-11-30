@@ -1,6 +1,15 @@
-const myLibrary = [];
+let myLibrary = [];
+
+function generateUniqueId() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = (Math.random() * 16) | 0,
+        v = c == 'x' ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
+    });
+}  
 
 function Book(author, title, pages, read) {
+    this.id = generateUniqueId();
     this.author = author;
     this.title = title;
     this.pages = pages;
@@ -29,12 +38,13 @@ function addBook() {
     closeNav();
 }
 
-function displayBook(book, index) {
+function displayBook(book) {
     let booksContainer = document.querySelector('.book-list');
     let bookCard = document.querySelector('.book-container').cloneNode(true);
     let buttons = bookCard.childNodes[7].childNodes;
-    buttons[1].id = index;
-    buttons[3].id = index;
+    bookCard.id = book.id;
+    buttons[1].id = book.id;
+    buttons[3].id = book.id;
     if (book.read){
         buttons[3].classList.add('read-button');
         buttons[3].classList.remove('not-read-button');
@@ -52,6 +62,19 @@ function displayBook(book, index) {
             
         }  
     })
+    bookCard.addEventListener('click', (e) => {
+        let booksContainer = document.querySelector('.book-list');
+        let books = booksContainer.childNodes;
+        for (let i = 1; i < books.length; i++){
+            if (books[i].id === e.target.id){
+                booksContainer.removeChild(books[i]);
+                break;
+            }
+        };
+
+        myLibrary = myLibrary.filter(book => book.id !== e.target.id)
+        console.log(myLibrary);
+    });
     bookCard.style.display = 'block';
     booksContainer.append(bookCard);
 }
